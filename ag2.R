@@ -28,7 +28,7 @@ predicoes <- predict(modelo, newdata = teste)
 
 # Avaliar o modelo
 conf <- confusionMatrix(predicoes, teste$Species)
-print(conf)
+# print(conf)
 
 # Entrada manual do usuário 
 cat("\nInsira as medidas da flor que deseja classificar:\n")
@@ -45,4 +45,4 @@ nova_amostra <- data.frame(Sepal.Length = sl,
 
 resultado <- predict(modelo, newdata = nova_amostra)
 
-cat("\n🔎 A espécie prevista é:", as.character(resultado), "\n")
+cat("\n🔎 A espécie prevista é:", as.character(resultado), "🌸\n")
