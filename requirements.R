@@ -1,7 +1,4 @@
-# ------------------------------------------------------------
-#  Instalação de dependências do projeto Iris (AG2)
-# ------------------------------------------------------------
-
+#  Instalação de dependências do projeto 
 pacotes <- c("caret", "dplyr", "e1071")
 
 for (pkg in pacotes) {
