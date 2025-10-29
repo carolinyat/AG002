@@ -114,6 +114,7 @@ confirmando que o k-NN foi uma escolha adequada para este dataset, tornando-o ba
 O modelo **k-Nearest Neighbors** mostrou-se eficaz na classificação de flores Íris,  
 atingindo desempenho notável e oferecendo resultados intuitivos e reprodutíveis.  
 O projeto passa por todas as etapas de um processo de aprendizado de máquina — desde o preparo dos dados até a previsão final — de uma maneira simples e direta, ajudando a entender na prática como funciona um modelo de classificação.
+
 ---
 
 ## 👩‍💻 Autores
