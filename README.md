@@ -64,7 +64,6 @@ O projeto tem como finalidade criar um modelo capaz de:
 ### Pré-requisitos
 
 - Ter o **R** instalado  
-- Instalar as bibliotecas necessárias (`caret`, `dplyr`, `e1071`)
 
 ### Execução no VS Code
 
@@ -102,11 +101,11 @@ A espécie prevista é: setosa
 
 ## 7. Avaliação do Modelo
 
-Durante os testes, o modelo apresentou **alta acurácia**,  
+Durante os testes, o modelo apresentou **alta acurácia** (100%),  
 demonstrando excelente separabilidade entre as três espécies.  
 
 A **matriz de confusão** exibe a precisão das classificações em cada classe,  
-confirmando que o k-NN foi uma escolha adequada para este dataset balanceado e bem estruturado.
+confirmando que o k-NN foi uma escolha adequada para este dataset, tornando-o balanceado e bem estruturado.
 
 ---
 
@@ -114,12 +113,10 @@ confirmando que o k-NN foi uma escolha adequada para este dataset balanceado e b
 
 O modelo **k-Nearest Neighbors** mostrou-se eficaz na classificação de flores Íris,  
 atingindo desempenho notável e oferecendo resultados intuitivos e reprodutíveis.  
-O projeto cobre todas as etapas de um pipeline supervisionado de Machine Learning —  
-da preparação dos dados até a inferência final — de forma clara e didática.
-
+O projeto passa por todas as etapas de um processo de aprendizado de máquina — desde o preparo dos dados até a previsão final — de uma maneira simples e direta, ajudando a entender na prática como funciona um modelo de classificação.
 ---
 
-## 👩‍💻 Autora
+## 👩‍💻 Autores
 
 - **Adson Ferreira**
 - **Caroliny Abreu**
