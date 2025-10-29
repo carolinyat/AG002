@@ -119,7 +119,7 @@ da preparação dos dados até a inferência final — de forma clara e didátic
 
 ---
 
-## 👩‍💻 Autora
+## 👩‍💻 Autores
 
 - **Adson Ferreira**
 - **Caroliny Abreu**
