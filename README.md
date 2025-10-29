@@ -1,114 +1,124 @@
-# 🌸 Classificando Flores Íris com Machine Learning (k-NN e R)
+# Classificando Flores Íris com Machine Learning (k-NN e R)
 
-Este projeto tem como objetivo aplicar técnicas de aprendizado de máquina para classificar flores do gênero *Íris* em três espécies: **Setosa, Versicolor e Virginica**. Para isso, utilizamos o algoritmo **k-Nearest Neighbors (k-NN)** implementado em **R**, com o auxílio do pacote `caret`.
+Este projeto aplica técnicas de **Aprendizado de Máquina supervisionado** para classificar flores do gênero *Íris* em três espécies: **Setosa**, **Versicolor** e **Virginica**.  
+O algoritmo utilizado é o **k-Nearest Neighbors (k-NN)**, implementado em **R** com o auxílio do pacote `caret`.
 
-O trabalho foi desenvolvido como parte da **AG2 de Engenharia de Computação/Software**, abordando desde o pré-processamento dos dados até a avaliação do modelo e testes com entrada manual do usuário.
+O trabalho foi desenvolvido como parte da **AG2 de Engenharia de Computação/Software**..
 
 ---
 
 ## 1. Sobre o Dataset Íris
 
-O *Iris Dataset* é um dos conjuntos de dados mais conhecidos da área de Machine Learning. Ele contém:
+O *Iris Dataset* é um clássico da área de Machine Learning, composto por:
 
-- **150 amostras**
-- **3 espécies**
-- **4 atributos numéricos**, sendo eles:
-  - *Sepal.Length* (cm)
-  - *Sepal.Width* (cm)
-  - *Petal.Length* (cm)
-  - *Petal.Width* (cm)
+- **150 amostras**  
+- **3 espécies distintas**  
+- **4 atributos numéricos**, sendo eles:  
+  - `sepal_length_cm` — Comprimento da sépala (cm)  
+  - `sepal_width_cm` — Largura da sépala (cm)  
+  - `petal_length_cm` — Comprimento da pétala (cm)  
+  - `petal_width_cm` — Largura da pétala (cm)  
 
-Cada linha representa uma flor e suas medidas. O objetivo é prever a espécie com base nesses valores.
+Cada linha representa uma flor com suas medidas morfológicas.  
+O objetivo é prever a espécie (*Setosa*, *Versicolor* ou *Virginica*) a partir dessas medidas.
 
 ---
 
 ## 2. Objetivo do Projeto
 
-O projeto tem como finalidade desenvolver e disponibilizar um modelo capaz de:
+O projeto tem como finalidade criar um modelo capaz de:
 
-- Embaralhar e separar os dados
-- Dividir o conjunto em 80% para treino e 20% para teste
-- Treinar um modelo utilizando k-NN
-- Avaliar o desempenho do modelo por meio de matriz de confusão
-- Permitir a classificação de novas amostras inseridas manualmente pelo usuário
+- Embaralhar o conjunto de dados para reduzir viés;  
+- Dividir o dataset em **80% para treino** e **20% para teste**;  
+- Treinar o modelo com o algoritmo **k-NN**;  
+- Avaliar o desempenho por meio de **matriz de confusão** e **acurácia**;  
+- Classificar novas amostras inseridas manualmente pelo usuário, retornando o nome da espécie prevista.
 
 ---
 
 ## 3. Tecnologias Utilizadas
 
 | Tecnologia | Finalidade |
-|------------|------------|
-| **R** | Linguagem base do projeto |
-| **caret** | Treinamento e avaliação do modelo |
-| **dplyr** | Manipulação dos dados |
-| **e1071** | Funções auxiliares para classificação |
+|-------------|-------------|
+| **R** | Linguagem principal do projeto |
+| **caret** | Treinamento e validação do modelo |
+| **dplyr** | Manipulação e transformação dos dados |
+| **e1071** | Suporte ao algoritmo k-NN e métricas estatísticas |
 
 ---
 
-## 4. Pipeline do Modelo
+## 4. Etapas do Pipeline
 
-O fluxo de execução do modelo segue as etapas:
-
-1. Carregamento do dataset
-2. Embaralhamento dos dados (redução de viés)
-3. Divisão em treino (80%) e teste (20%)
-4. Treinamento com o algoritmo k-NN
-5. Avaliação por meio de matriz de confusão
-6. Predição interativa com entrada do usuário
+1. **Leitura dos dados** do arquivo CSV local (`iris.csv`);  
+2. **Conversão dos nomes das espécies** para valores inteiros (1, 2 e 3) e posteriormente para fator;  
+3. **Embaralhamento aleatório** dos registros;  
+4. **Divisão treino/teste** (80% / 20%) com `createDataPartition`;  
+5. **Treinamento** do modelo `k-NN` via `caret::train`;  
+6. **Avaliação** do modelo com `confusionMatrix`;  
+7. **Predição interativa** com entrada manual e conversão do resultado numérico para o **nome da espécie**.
 
 ---
 
 ## 5. Como Executar o Projeto
 
-### Via *VS Code*
+### Pré-requisitos
 
-1. Instale R e o plugin "R Extension" no VS Code  
-2. Abra um terminal R via: `Ctrl + Shift + P` → **R: Create R Terminal**  
-3. Execute o script `requirements.R` para instalação dos pacotes
-```r
-source("requirements.R")
-```
-4. Execute o script principal do projeto `ag2.R`
-```r
-source("ag2.R")
-```
-5. Digite os valores quando o script solicitar
+- Ter o **R** instalado  
+- Instalar as bibliotecas necessárias (`caret`, `dplyr`, `e1071`)
+
+### Execução no VS Code
+
+1. Abra o projeto no **VS Code**  
+2. Crie um terminal R:  
+   `Ctrl + Shift + P` → **R: Create R Terminal**  
+3. Instale os pacotes necessários:  
+   ```r
+   source("requirements.R")
+   ```
+4. Execute o script principal (`ag2.R`):  
+   ```r
+   source("ag2.R")
+   ```
+5. Quando solicitado, insira manualmente as medidas da flor para previsão.
 
 ---
 
-## 6. Exemplos de Entrada e Saída
+## 6. Exemplo de Entrada e Saída
 
-Entrada do usuário:
-
+### Entrada
 ```r
-Comprimento da Sépala: 5.1
-Largura da Sépala: 3.5
-Comprimento da Pétala: 1.4
-Largura da Pétala: 0.2
+Comprimento da Sépala (cm): 5.1
+Largura da Sépala (cm): 3.5
+Comprimento da Pétala (cm): 1.4
+Largura da Pétala (cm): 0.2
 ```
 
-Saída esperada:
-
+### Saída
 ```r
-A espécie prevista é: setosa 🌸
+A espécie prevista é: setosa 
 ```
 
 ---
 
 ## 7. Avaliação do Modelo
 
-O modelo é avaliado pela matriz de confusão e pela acurácia.
-Nos testes, foi obtida acurácia próxima de 100%, o que confirma a boa separabilidade do dataset.
+Durante os testes, o modelo apresentou **alta acurácia**,  
+demonstrando excelente separabilidade entre as três espécies.  
+
+A **matriz de confusão** exibe a precisão das classificações em cada classe,  
+confirmando que o k-NN foi uma escolha adequada para este dataset balanceado e bem estruturado.
 
 ---
 
 ## 8. Conclusão
 
-O modelo k-NN se mostrou eficiente para o problema de classificação de flores Íris, atingindo alta acurácia e fornecendo previsões consistentes. O projeto cumpre todas as etapas de um pipeline de Machine Learning supervisionado, desde o pré-processamento até a inferência final.
+O modelo **k-Nearest Neighbors** mostrou-se eficaz na classificação de flores Íris,  
+atingindo desempenho notável e oferecendo resultados intuitivos e reprodutíveis.  
+O projeto cobre todas as etapas de um pipeline supervisionado de Machine Learning —  
+da preparação dos dados até a inferência final — de forma clara e didática.
 
 ---
 
-## Autores:
+## 👩‍💻 Autora
 
-- Adson Ferreira <br>
-- Caroliny Abreu
+- **Caroliny Abreu**
